@@ -1,0 +1,25 @@
+{
+  "number": 81,
+  "product_id": "JLZ-EDU-SK-065",
+  "chinese_name": "教师薪酬提成计算",
+  "english_name": "Teacher Pay Commission Calculator",
+  "repository_name": "edu-teacher-pay-commission-calculator",
+  "product_type": "Skill",
+  "category": "07 财务运营中心",
+  "version": "1.0.0",
+  "status": "PACKAGE_READY",
+  "workbuddy_validation": "NOT_VERIFIED",
+  "license": "Apache-2.0",
+  "baseline_tag": "education-product-baseline-v1.0.0",
+  "package_path": "dist/edu-teacher-pay-commission-calculator-v1.0.0.zip",
+  "calculator": true,
+  "core_input": "教师薪酬规则、课时、班次、业绩、提成、扣减项和核算周期",
+  "main_output": "薪酬测算表、提成明细、异常项、口径说明和复核清单",
+  "package_entries": [
+    "edu-teacher-pay-commission-calculator/SKILL.md",
+    "edu-teacher-pay-commission-calculator/references/DOMAIN_GUIDE.md",
+    "edu-teacher-pay-commission-calculator/references/EXAMPLES.md",
+    "edu-teacher-pay-commission-calculator/templates/OUTPUT_TEMPLATE.md",
+    "edu-teacher-pay-commission-calculator/scripts/calculate.js"
+  ]
+}

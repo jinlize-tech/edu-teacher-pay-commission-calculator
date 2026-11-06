@@ -1,0 +1,14 @@
+const fs = require('fs');
+const input = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+const baseSalary = Number(input.baseSalary || 0);
+const deliveredHours = Number(input.deliveredHours || 0);
+const hourlyRate = Number(input.hourlyRate || 0);
+const sales = Number(input.sales || 0);
+const commissionRate = Number(input.commissionRate || 0);
+const bonus = Number(input.bonus || 0);
+const deductions = Number(input.deductions || 0);
+const hourPay = Number((deliveredHours * hourlyRate).toFixed(2));
+const commission = Number((sales * commissionRate).toFixed(2));
+const grossPay = Number((baseSalary + hourPay + commission + bonus).toFixed(2));
+const netPay = Number((grossPay - deductions).toFixed(2));
+console.log(JSON.stringify({status:'ok',formula_version:'1.0.0',hourPay,commission,grossPay,netPay}, null, 2));
