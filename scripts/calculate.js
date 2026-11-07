@@ -17,7 +17,7 @@ const commissionRate = field('commissionRate', 1);
 const bonus = field('bonus');
 const deductions = field('deductions');
 if (errors.length) {
-  console.log(JSON.stringify({status:'invalid',formula_version:'1.0.1',errors}, null, 2));
+  console.log(JSON.stringify({status:'invalid',formula_version:'1.0.2',errors}, null, 2));
   process.exit(2);
 }
 const hourPay = Number((deliveredHours * hourlyRate).toFixed(2));
@@ -25,7 +25,7 @@ const commission = Number((sales * commissionRate).toFixed(2));
 const grossPay = Number((baseSalary + hourPay + commission + bonus).toFixed(2));
 const netPay = Number((grossPay - deductions).toFixed(2));
 if (netPay < 0) {
-  console.log(JSON.stringify({status:'invalid',formula_version:'1.0.1',errors:['扣减金额不得大于应发金额'],grossPay,netPay}, null, 2));
+  console.log(JSON.stringify({status:'invalid',formula_version:'1.0.2',errors:['扣减金额不得大于应发金额'],grossPay,netPay}, null, 2));
   process.exit(2);
 }
-console.log(JSON.stringify({status:'ok',formula_version:'1.0.1',hourPay,commission,grossPay,netPay,requiresPayrollReview:true}, null, 2));
+console.log(JSON.stringify({status:'ok',formula_version:'1.0.2',hourPay,commission,grossPay,netPay,requiresPayrollReview:true}, null, 2));
