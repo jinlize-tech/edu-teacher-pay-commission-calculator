@@ -1,0 +1,9 @@
+{
+  "hourlyRate": 100,
+  "deductions": 0,
+  "commissionRate": 1.1,
+  "deliveredHours": 20,
+  "bonus": 0,
+  "baseSalary": 3000,
+  "sales": 50000
+}

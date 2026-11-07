@@ -1,0 +1,63 @@
+[
+  {
+    "id": "normal",
+    "layer": "T4_DETERMINISTIC_FUNCTION",
+    "input_file": "tests/calculator-cases/normal.json",
+    "expected_exit_code": 0,
+    "expected": {
+      "netPay": 6700,
+      "commission": 1500,
+      "requiresPayrollReview": true,
+      "hourPay": 2000,
+      "status": "ok",
+      "grossPay": 7000
+    }
+  },
+  {
+    "id": "missing-field",
+    "layer": "T5_SCENARIO_TESTS",
+    "input_file": "tests/calculator-cases/missing-field.json",
+    "expected_exit_code": 2,
+    "expected": {
+      "status": "invalid",
+      "errors": [
+        "deductions必须在0到9007199254740991之间"
+      ]
+    }
+  },
+  {
+    "id": "invalid-rate",
+    "layer": "T5_SCENARIO_TESTS",
+    "input_file": "tests/calculator-cases/invalid-rate.json",
+    "expected_exit_code": 2,
+    "expected": {
+      "status": "invalid",
+      "errors": [
+        "commissionRate必须在0到1之间"
+      ]
+    }
+  },
+  {
+    "id": "full-commission-boundary",
+    "layer": "T5_SCENARIO_TESTS",
+    "input_file": "tests/calculator-cases/full-commission-boundary.json",
+    "expected_exit_code": 0,
+    "expected": {
+      "netPay": 100,
+      "commission": 100,
+      "status": "ok"
+    }
+  },
+  {
+    "id": "deductions-exceed-pay",
+    "layer": "T5_SCENARIO_TESTS",
+    "input_file": "tests/calculator-cases/deductions-exceed-pay.json",
+    "expected_exit_code": 2,
+    "expected": {
+      "status": "invalid",
+      "errors": [
+        "扣减金额不得大于应发金额"
+      ]
+    }
+  }
+]
