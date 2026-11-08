@@ -1,9 +1,9 @@
 {
-  "baseSalary": 0,
-  "bonus": 0,
-  "deliveredHours": 0,
-  "deductions": 0,
   "commissionRate": 1,
   "hourlyRate": 0,
-  "sales": 100
+  "baseSalary": 0,
+  "sales": 100,
+  "deliveredHours": 0,
+  "bonus": 0,
+  "deductions": 0
 }

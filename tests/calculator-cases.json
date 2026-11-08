@@ -6,11 +6,11 @@
     "expected_exit_code": 0,
     "expected": {
       "requiresPayrollReview": true,
-      "commission": 1500,
       "hourPay": 2000,
-      "grossPay": 7000,
+      "commission": 1500,
+      "netPay": 6700,
       "status": "ok",
-      "netPay": 6700
+      "grossPay": 7000
     }
   },
   {
@@ -19,10 +19,10 @@
     "input_file": "tests/calculator-cases/missing-field.json",
     "expected_exit_code": 2,
     "expected": {
+      "status": "invalid",
       "errors": [
         "deductions必须在0到9007199254740991之间"
-      ],
-      "status": "invalid"
+      ]
     }
   },
   {
@@ -31,10 +31,10 @@
     "input_file": "tests/calculator-cases/invalid-rate.json",
     "expected_exit_code": 2,
     "expected": {
+      "status": "invalid",
       "errors": [
         "commissionRate必须在0到1之间"
-      ],
-      "status": "invalid"
+      ]
     }
   },
   {
@@ -43,8 +43,8 @@
     "input_file": "tests/calculator-cases/full-commission-boundary.json",
     "expected_exit_code": 0,
     "expected": {
-      "netPay": 100,
       "status": "ok",
+      "netPay": 100,
       "commission": 100
     }
   },
@@ -54,10 +54,10 @@
     "input_file": "tests/calculator-cases/deductions-exceed-pay.json",
     "expected_exit_code": 2,
     "expected": {
+      "status": "invalid",
       "errors": [
         "扣减金额不得大于应发金额"
-      ],
-      "status": "invalid"
+      ]
     }
   }
 ]
